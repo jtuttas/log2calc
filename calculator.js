@@ -30,7 +30,7 @@ function createCalculator(containerId) {
     `;
 }
 
-let currentInput = "-";
+let currentInput = "";
 let operation = "";
 let firstNumber = null;
 let result = null;
@@ -75,7 +75,7 @@ function setOperation(op, event) {
   } else {
     currentInput = "";
     operation = op;
-    document.getElementById("display").value = "-";
+    document.getElementById("display").value = "";
   }
 }
 
