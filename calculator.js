@@ -31,6 +31,7 @@ function createCalculator(containerId) {
 }
 
 let currentInput = "";
+document.getElementById("display").value = "0";
 let operation = "";
 let firstNumber = null;
 let result = null;
@@ -75,7 +76,7 @@ function setOperation(op, event) {
   } else {
     currentInput = "";
     operation = op;
-    document.getElementById("display").value = "";
+    document.getElementById("display").value = "0";
   }
 }
 
