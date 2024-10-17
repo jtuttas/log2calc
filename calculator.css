@@ -1,0 +1,28 @@
+#calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-gap: 10px;
+    width: max-content;
+    margin: auto;
+}
+button, input {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    text-align: center;
+}
+#display {
+    grid-column: span 4;
+    width: calc(4 * 60px + 3 * 10px);
+    height: 60px;
+    font-size: 1.5em;
+    background-color: #e0f7df; /* Leicht grünlicher Hintergrund */
+}
+#equals {
+    width: calc(2 * 60px + 10px);
+    background-color: #007bff; /* Blauer Hintergrund */
+    color: white;
+}
+#clear {
+    background-color: #ffcccc; /* Leicht roter Hintergrund */
+}
