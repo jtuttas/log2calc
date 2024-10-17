@@ -20,6 +20,7 @@ function createCalculator(containerId) {
             <button onclick="appendNumber('9', event)" class="calculator-button">9</button>
             <button onclick="setOperation('multiply', event)" class="calculator-button">*</button>
             <button onclick="appendNumber('0', event)" class="calculator-button">0</button>
+            <button onclick="appendDecimal(event)" class="calculator-button">.</button>
             <button onclick="setOperation('log2', event)" class="calculator-button">log2</button>
             <button onclick="setOperation('divide', event)" class="calculator-button">/</button>
             <button id="clear" onclick="clearDisplay(event)" class="calculator-button">C</button>
@@ -37,6 +38,14 @@ function appendNumber(number, event) {
     if (event) event.preventDefault(); // Verhindert das erneute Laden der Seite
     currentInput += number;
     document.getElementById("display").value = currentInput;
+}
+
+function appendDecimal(event) {
+    if (event) event.preventDefault(); // Verhindert das erneute Laden der Seite
+    if (!currentInput.includes('.')) {
+        currentInput += '.';
+        document.getElementById("display").value = currentInput;
+    }
 }
 
 function setOperation(op, event) {
