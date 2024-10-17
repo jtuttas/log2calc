@@ -22,15 +22,15 @@ function createCalculator(containerId) {
             <button onclick="appendNumber('0', event)" class="calculator-button">0</button>
             <button onclick="appendDecimal(event)" class="calculator-button">.</button>
             <button onclick="toggleSign(event)" class="calculator-button">+/-</button>
-            <button onclick="setOperation('divide', event)" class="calculator-button">/</button>
             <button onclick="setOperation('log2', event)" class="calculator-button">log2</button>
+            <button onclick="setOperation('divide', event)" class="calculator-button">/</button>
             <button id="clear" onclick="clearDisplay(event)" class="calculator-button">C</button>
             <button id="equals" onclick="calculate(event)" class="calculator-button" style="grid-column: span 2;">=</button>
         </div>
     `;
 }
 
-let currentInput = "";
+let currentInput = "-";
 let operation = "";
 let firstNumber = null;
 let result = null;
@@ -75,7 +75,7 @@ function setOperation(op, event) {
   } else {
     currentInput = "";
     operation = op;
-    document.getElementById("display").value = "";
+    document.getElementById("display").value = "-";
   }
 }
 
