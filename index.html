@@ -6,13 +6,13 @@
     <title>Taschenrechner</title>
 </head>
 <body>
-    <h1 style="text-align: center;">Taschenrechner (V1.0)</h1>
+    <h1 style="text-align: center;">Taschenrechner (V1.1)</h1>
     <div id="calculator-container"></div>
     <script>
         function loadCalculator() {
             // Laden der JavaScript-Datei für den Taschenrechner
             const script = document.createElement('script');
-            script.src = 'https://jtuttas.github.io/log2calc/calculator.js';
+            script.src = 'calculator.js';
             script.onload = function () {
                 // Nachdem das Skript geladen wurde, wird der Taschenrechner erstellt
                 createCalculator('calculator-container');
@@ -22,7 +22,7 @@
             // Laden der CSS-Datei für den Taschenrechner
             const style = document.createElement('link');
             style.rel = 'stylesheet';
-            style.href = 'https://jtuttas.github.io/log2calc/calculator.css';
+            style.href = 'calculator.css';
             document.head.appendChild(style);
         }
 
