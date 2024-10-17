@@ -6,7 +6,7 @@ function createCalculator(containerId) {
   }
   container.innerHTML = `
         <div id="calculator">
-            <input type="text" id="display" placeholder="0" disabled>
+            <input type="text" id="display" placeholder="-" disabled>
             <button onclick="appendNumber('1', event)" class="calculator-button">1</button>
             <button onclick="appendNumber('2', event)" class="calculator-button">2</button>
             <button onclick="appendNumber('3', event)" class="calculator-button">3</button>
