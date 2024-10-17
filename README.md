@@ -29,3 +29,7 @@ Einbau des Taschenrechners über folgendes JS:
 </script>
 
 ```
+
+Sie dann z.B. in Moodle integriert wie folgt aus:
+
+![log2](log2.png)
