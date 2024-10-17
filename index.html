@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taschenrechner</title>
-    <script>
-        function loadCalculator() {
-            const script = document.createElement('script');
-            script.src = 'https://meinserver.com/calculator.js';
-            document.body.appendChild(script);
-
-            const style = document.createElement('link');
-            style.rel = 'stylesheet';
-            style.href = 'https://meinserver.com/calculator.css';
-            document.head.appendChild(style);
-        }
-    </script>
 </head>
 <body>
     <div id="calculator-container"></div>
     <script>
+            function loadCalculator() {
+                const script = document.createElement('script');
+                script.src = 'https://jtuttas.github.io/log2calc/calculator.js';
+                document.body.appendChild(script);
+
+                const style = document.createElement('link');
+                style.rel = 'stylesheet';
+                style.href = 'https://jtuttas.github.io/log2calc/calculator.css';
+                document.head.appendChild(style);
+            }
         // Taschenrechner wird in den Container mit der ID "calculator-container" integriert
         loadCalculator();
     </script>

@@ -7,23 +7,23 @@ function createCalculator(containerId) {
     container.innerHTML = `
         <div id="calculator">
             <input type="text" id="display" placeholder="0" disabled>
-            <button onclick="appendNumber('1')">1</button>
-            <button onclick="appendNumber('2')">2</button>
-            <button onclick="appendNumber('3')">3</button>
-            <button onclick="setOperation('add')">+</button>
-            <button onclick="appendNumber('4')">4</button>
-            <button onclick="appendNumber('5')">5</button>
-            <button onclick="appendNumber('6')">6</button>
-            <button onclick="setOperation('subtract')">-</button>
-            <button onclick="appendNumber('7')">7</button>
-            <button onclick="appendNumber('8')">8</button>
-            <button onclick="appendNumber('9')">9</button>
-            <button onclick="setOperation('multiply')">*</button>
-            <button onclick="appendNumber('0')">0</button>
-            <button onclick="setOperation('log2')">log2</button>
-            <button onclick="setOperation('divide')">/</button>
-            <button id="clear" onclick="clearDisplay()">C</button>
-            <button id="equals" onclick="calculate()" style="grid-column: span 2;">=</button>
+            <button onclick="appendNumber('1', event)" class="calculator-button">1</button>
+            <button onclick="appendNumber('2', event)" class="calculator-button">2</button>
+            <button onclick="appendNumber('3', event)" class="calculator-button">3</button>
+            <button onclick="setOperation('add', event)" class="calculator-button">+</button>
+            <button onclick="appendNumber('4', event)" class="calculator-button">4</button>
+            <button onclick="appendNumber('5', event)" class="calculator-button">5</button>
+            <button onclick="appendNumber('6', event)" class="calculator-button">6</button>
+            <button onclick="setOperation('subtract', event)" class="calculator-button">-</button>
+            <button onclick="appendNumber('7', event)" class="calculator-button">7</button>
+            <button onclick="appendNumber('8', event)" class="calculator-button">8</button>
+            <button onclick="appendNumber('9', event)" class="calculator-button">9</button>
+            <button onclick="setOperation('multiply', event)" class="calculator-button">*</button>
+            <button onclick="appendNumber('0', event)" class="calculator-button">0</button>
+            <button onclick="setOperation('log2', event)" class="calculator-button">log2</button>
+            <button onclick="setOperation('divide', event)" class="calculator-button">/</button>
+            <button id="clear" onclick="clearDisplay(event)" class="calculator-button">C</button>
+            <button id="equals" onclick="calculate(event)" class="calculator-button" style="grid-column: span 2;">=</button>
         </div>
     `;
 }
@@ -33,12 +33,14 @@ let operation = "";
 let firstNumber = null;
 let result = null;
 
-function appendNumber(number) {
+function appendNumber(number, event) {
+    if (event) event.preventDefault(); // Verhindert das erneute Laden der Seite
     currentInput += number;
     document.getElementById("display").value = currentInput;
 }
 
-function setOperation(op) {
+function setOperation(op, event) {
+    if (event) event.preventDefault(); // Verhindert das erneute Laden der Seite
     if (result !== null && currentInput === "") {
         firstNumber = result;
     } else if (currentInput !== "") {
@@ -55,7 +57,8 @@ function setOperation(op) {
     }
 }
 
-function calculate() {
+function calculate(event) {
+    if (event) event.preventDefault(); // Verhindert das erneute Laden der Seite
     let secondNumber = parseFloat(currentInput);
 
     switch (operation) {
@@ -88,7 +91,8 @@ function calculate() {
     operation = "";
 }
 
-function clearDisplay() {
+function clearDisplay(event) {
+    if (event) event.preventDefault(); // Verhindert das erneute Laden der Seite
     currentInput = "";
     firstNumber = null;
     operation = "";
