@@ -8,7 +8,7 @@ Einbau des Taschenrechners über folgendes JS:
     function loadCalculator() {
         // Laden der JavaScript-Datei für den Taschenrechner
         const script = document.createElement('script');
-        script.src = 'https://jtuttas.github.io/log2calc/calculator.js';
+        script.src = 'https://calc.joerg-tuttas.de/calculator.js';
         script.onload = function() {
             // Nachdem das Skript geladen wurde, wird der Taschenrechner erstellt
             createCalculator('calculator-container');
@@ -18,7 +18,7 @@ Einbau des Taschenrechners über folgendes JS:
         // Laden der CSS-Datei für den Taschenrechner
         const style = document.createElement('link');
         style.rel = 'stylesheet';
-        style.href = 'https://jtuttas.github.io/log2calc/calculator.css';
+        style.href = 'https://calc.joerg-tuttas.de/calculator.css';
         document.head.appendChild(style);
     }
 
